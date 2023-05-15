@@ -174,7 +174,8 @@ func Source(dns string, reader io.Reader, opts ...SourceOption) error {
 		_, err = dbWrapper.Exec(ssql)
 		if err != nil {
 			log.Printf("[error] %v\n", err)
-			return err
+			//执行失败不中断
+			//return err
 		}
 	}
 
