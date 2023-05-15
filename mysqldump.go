@@ -248,7 +248,7 @@ func getDBs(db *sql.DB) ([]string, error) {
 
 func getAllTables(db *sql.DB) ([]string, error) {
 	var tables []string
-	rows, err := db.Query("SHOW TABLES")
+	rows, err := db.Query("show full tables where Table_Type = 'BASE TABLE'")
 	if err != nil {
 		return nil, err
 	}
